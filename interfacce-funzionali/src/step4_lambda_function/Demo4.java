@@ -50,6 +50,11 @@ public class Demo4 {
 		// return viene sostituito da freccia magra "->"
 		Collections.sort(listaLibriComp, (libro1, libro2) ->  libro2.getPagine() - libro1.getPagine()  );  //invertito i libri x decrescente
 		stampaLista(listaLibriComp);
+		
+		
+		// stessa cosa, in 2 passaggi
+		Comparator<LibroComparable> comparator = (libro1, libro2) ->  libro2.getPagine() - libro1.getPagine();
+		Collections.sort(listaLibriComp, comparator); 
 					
 		
 
