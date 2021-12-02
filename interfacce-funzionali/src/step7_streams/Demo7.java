@@ -1,5 +1,6 @@
 package step7_streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import step1_comparable.LibroComparable;
 
 public class Demo7 {
 	public static void main(String[] args) {
@@ -68,11 +71,30 @@ public class Demo7 {
 		
 		
 		
+		
+		
+		
 		// summary statistics
 		// elenco di statistiche sugli elementi dello stream
 		IntSummaryStatistics summaryStatistics = IntStream.of(34,27,89,66,10,1,59).summaryStatistics();
 		System.out.println(summaryStatistics);
 		
+		
+		ArrayList<LibroComparable> listaLibriComp = new ArrayList<LibroComparable>();
+		listaLibriComp.add(new LibroComparable("Il signore degli anelli", "Tolkien", 1225, 20.25));
+		listaLibriComp.add(new LibroComparable("Dieci piccoli indiani", "Agatha Christie", 208, 10.20));
+		listaLibriComp.add(new LibroComparable("Harry Potter e la Pietra Filosofale", "J. K. Rowling", 1402, 8.50));
+
+		// map		
+		// prende una function che prende un libro e restituisce una stringa
+		List<String> listAutori = listaLibriComp
+			.stream()
+			.map(libro -> libro.getAutore())
+			.distinct() // elimina doppioni
+			.sorted()
+			.collect(Collectors.toList());
+		
+		listAutori.forEach(System.out::println);
 	}
 	
 
