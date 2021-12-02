@@ -1,4 +1,4 @@
-package step4_lambda_function;
+package step4_lambda_function_comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,18 +17,18 @@ public class Demo4 {
 		listaLibriComp.add(new LibroComparable("Harry Potter e la Pietra Filosofale", "J. K. Rowling", 1402, 8.50));
 
 		System.out.println("--------------originale--------------");
-		stampaLista(listaLibriComp);
+		stampaListaForeach(listaLibriComp);
 
 		System.out.println("--------------ordinata per Titolo--------------");
 		// ordina i libri usando compareTo
 		Collections.sort(listaLibriComp);
-		stampaLista(listaLibriComp);
+		stampaListaForeach(listaLibriComp);
 
 		System.out.println("--------------ordinata per numero di Pagine Crescente--------------");
 		// ordina i libri usando compare di LibroComparatoPagine
 		// come secondo argomento vuole una classe che implementa l'interfaccia Comparator
 		Collections.sort(listaLibriComp, new LibroComparatorPagine());
-		stampaLista(listaLibriComp);
+		stampaListaForeach(listaLibriComp);
 		
 		
 		System.out.println("--------------ordinata per Prezzo Decrescente--------------");
@@ -42,25 +42,23 @@ public class Demo4 {
 			}
 			
 		});
-		stampaLista(listaLibriComp);
+		stampaListaForeach(listaLibriComp);
 		
 		System.out.println("--------------ordinata per numero Pagine Decrescente--------------");
-		// ordina i libri usando una lambda function
+		// ordina i libri usando una lambda function Comparator
 		// rimane solo il metodo compare, senza tipi o nome del metodo
 		// return viene sostituito da freccia magra "->"
 		Collections.sort(listaLibriComp, (libro1, libro2) ->  libro2.getPagine() - libro1.getPagine()  );  //invertito i libri x decrescente
-		stampaLista(listaLibriComp);
-		
-		
-		// stessa cosa, in 2 passaggi
+		stampaListaForeach(listaLibriComp);		
+
+		// stessa operazione ma in 2 passaggi
 		Comparator<LibroComparable> comparator = (libro1, libro2) ->  libro2.getPagine() - libro1.getPagine();
 		Collections.sort(listaLibriComp, comparator); 
 					
-		
 
 	}
 
-	private static void stampaLista(ArrayList<LibroComparable> listaLibriComp) {
+	private static void stampaListaForeach(ArrayList<LibroComparable> listaLibriComp) {
 		for (LibroComparable libroComparable : listaLibriComp) {
 			System.out.println(libroComparable);
 		}
