@@ -18,10 +18,14 @@ public class TestVeicolo {
 
 
 	public static void main(String[] args) {
-		Autoveicolo auto = new Autoveicolo("123456789", "Ferrari", 4, 3);
-		Motoveicolo moto = new Motoveicolo("987654321", "Honda", 2);
+		Veicolo auto = new Autoveicolo("123456789", "Ferrari", 4, 3);
+		Veicolo moto = new Motoveicolo("987654321", "Honda", 2);
 		
-		System.out.println(moto.stampa());
-		System.out.println(auto.stampa());
+		System.out.println("Moto: " + moto.stampa());
+		System.out.println("Auto: " + auto.stampa());
+		
+		System.out.println("Moto consumo x 100Km=" + moto.consumo(100) + " litri");
+		System.out.println("Auto consumo x 100Km=" + auto.consumo(100) + " litri");
+		
 	}
 }

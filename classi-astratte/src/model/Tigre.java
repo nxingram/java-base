@@ -1,6 +1,6 @@
 package model;
 
-public class Tigre extends Animal {
+public class Tigre extends Animale {
 
 	private String famiglia;
 	
@@ -12,21 +12,18 @@ public class Tigre extends Animal {
 
 	@Override
 	public String nome() {
-		return this.famiglia + " " + this.getGenere() + " " + this.getSpecie();
-	}
-	
-	public String nomeAnimale() {
-		return super.nome();
+//		return this.famiglia + " " + this.genere + " " + this.specie;
+		return this.famiglia + " " + super.nome();
 	}
 
-	public String getFamiglia() {
-		return famiglia;
-	}
-
-	public void setFamiglia(String famiglia) {
-		this.famiglia = famiglia;
-	}
-	
+//	public String getFamiglia() {
+//		return famiglia;
+//	}
+//
+//	public void setFamiglia(String famiglia) {
+//		this.famiglia = famiglia;
+//	}
+//	
 	
 
 
