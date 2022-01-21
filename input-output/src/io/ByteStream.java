@@ -20,8 +20,8 @@ public class ByteStream {
 		// buffered
 		// Stream: binary input/output
 		// try-with-resources: chiude file stream automaticamente
-		try (BufferedInputStream in = new BufferedInputStream(new FileInputStream("txt/Dati-in.txt"));
-				BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("txt/Dati-out.txt"))) {
+		try (BufferedInputStream in = new BufferedInputStream(new FileInputStream("folder/Dati-in.txt"));
+				BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("folder/Dati-out.txt"))) {
 
 			int b; // -1: fine stream
 			while ((b = in.read()) != -1) { // legge un byte alla volta
@@ -46,9 +46,9 @@ public class ByteStream {
 	private static void unbufferedStream() {
 		// unbuffered
 		// Stream: binary input/output
-		// try-with-resources: chiude file stream automaticamente
-		try (FileInputStream in = new FileInputStream("txt/Dati-in.txt");
-				FileOutputStream out = new FileOutputStream("txt/Dati-out.txt")) {
+		// try-with-resources: chiude stream automaticamente
+		try (FileInputStream in = new FileInputStream("folder/Dati-in.txt");
+				FileOutputStream out = new FileOutputStream("folder/Dati-out.txt")) {
 
 			int b; // -1: fine stream
 			while ((b = in.read()) != -1) { // legge un byte alla volta

@@ -24,8 +24,8 @@ public class CharacterStream {
 		// buffered
 		// Reader: character input/output
 		// try-with-resources: chiude file stream automaticamente
-		try (BufferedReader in = new BufferedReader(new FileReader("txt/Dati-in.txt"));
-				FileWriter out = new FileWriter("txt//Dati-out.txt")) {
+		try (BufferedReader in = new BufferedReader(new FileReader("folder/Dati-in.txt"));
+				FileWriter out = new FileWriter("folder//Dati-out.txt")) {
 
 			String s; // null: fine stream
 			while ((s = in.readLine()) != null) { // legge una riga alla volta
@@ -50,9 +50,9 @@ public class CharacterStream {
 	private static void inputStreamReader() {
 		// buffered
 		// Stream: binary input/output => traformato in Reader
-		// try-with-resources: chiude file stream automaticamente
-		try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("txt/Dati-in.txt")));
-				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("txt/Dati-out.txt")))) {
+		// try-with-resources: chiude stream automaticamente
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("folder/Dati-in.txt")));
+				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("folder/Dati-out.txt")))) {
 
 			String s; // null: fine stream
 			while ((s = in.readLine()) != null) { // legge una riga alla volta
