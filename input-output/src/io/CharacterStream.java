@@ -25,7 +25,7 @@ public class CharacterStream {
 		// Reader: character input/output
 		// try-with-resources: chiude file stream automaticamente
 		try (BufferedReader in = new BufferedReader(new FileReader("folder/Dati-in.txt"));
-				FileWriter out = new FileWriter("folder//Dati-out.txt")) {
+				FileWriter out = new FileWriter("folder/Dati-out.txt")) {
 
 			String s; // null: fine stream
 			while ((s = in.readLine()) != null) { // legge una riga alla volta
