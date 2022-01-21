@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class CharacterReader {
+public class CharacterStream {
 
 	public static void main(String[] args) {
 		// "Reader-Writer": consigliato per la lettura di stream di caratteri
