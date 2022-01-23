@@ -27,18 +27,16 @@ public class ByteStream {
 			while ((b = in.read()) != -1) { // legge un byte alla volta
 				out.write(b); // scrive un byte
 
-				//numeri interi con range 0 to 65535 traformati in caratteri UTF-16
+				// numeri interi con range 0 to 65535 traformati in caratteri UTF-16
 				System.out.println((char) b); // cast a carattere
 			}
 
 			System.out.println("Lettura e scrittura effettuata correttamente");
 
 		} catch (FileNotFoundException e) {
-			// file non trovato
-			e.printStackTrace();
+			System.out.println("File non trovato");
 		} catch (IOException e) {
-			// errore lettura/scrittura generico
-			e.printStackTrace();
+			System.out.println("Errore i/o");
 		}
 
 	}
@@ -54,18 +52,16 @@ public class ByteStream {
 			while ((b = in.read()) != -1) { // legge un byte alla volta
 				out.write(b); // scrive un byte
 
-				//numeri interi con range 0 to 65535 traformati in caratteri UTF-16
+				// numeri interi con range 0 to 65535 traformati in caratteri UTF-16
 				System.out.println((char) b); // cast a carattere
 			}
 
 			System.out.println("Lettura e scrittura effettuata correttamente");
 
 		} catch (FileNotFoundException e) {
-			// file non trovato
-			e.printStackTrace();
+			System.out.println("File non trovato");
 		} catch (IOException e) {
-			// errore lettura/scrittura generico
-			e.printStackTrace();
+			System.out.println("Errore i/o");
 		}
 	}
 

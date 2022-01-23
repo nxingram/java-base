@@ -25,7 +25,7 @@ public class CharacterStream {
 		// Reader: character input/output
 		// try-with-resources: chiude file stream automaticamente
 		try (BufferedReader in = new BufferedReader(new FileReader("folder/Dati-in.txt"));
-				FileWriter out = new FileWriter("folder/Dati-out.txt")) {
+				BufferedWriter out = new BufferedWriter(new FileWriter("folder/Dati-out.txt"))) {
 
 			String s; // null: fine stream
 			while ((s = in.readLine()) != null) { // legge una riga alla volta
@@ -38,11 +38,9 @@ public class CharacterStream {
 			System.out.println("Lettura e scrittura effettuata correttamente");
 
 		} catch (FileNotFoundException e) {
-			// file non trovato
-			e.printStackTrace();
+			System.out.println("File non trovato");
 		} catch (IOException e) {
-			// errore lettura/scrittura generico
-			e.printStackTrace();
+			System.out.println("Errore i/o");
 		}
 
 	}
@@ -52,7 +50,8 @@ public class CharacterStream {
 		// Stream: binary input/output => traformato in Reader
 		// try-with-resources: chiude stream automaticamente
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("folder/Dati-in.txt")));
-				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("folder/Dati-out.txt")))) {
+				BufferedWriter out = new BufferedWriter(
+						new OutputStreamWriter(new FileOutputStream("folder/Dati-out.txt")))) {
 
 			String s; // null: fine stream
 			while ((s = in.readLine()) != null) { // legge una riga alla volta
@@ -65,11 +64,9 @@ public class CharacterStream {
 			System.out.println("Lettura e scrittura effettuata correttamente");
 
 		} catch (FileNotFoundException e) {
-			// file non trovato
-			e.printStackTrace();
+			System.out.println("File non trovato");
 		} catch (IOException e) {
-			// errore lettura/scrittura generico
-			e.printStackTrace();
+			System.out.println("Errore i/o");
 		}
 
 	}

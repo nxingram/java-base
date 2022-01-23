@@ -27,10 +27,10 @@ public class DataStream {
 				dos.writeUTF(cognomi[i]);
 				dos.writeChar('\t'); // tab di spaziatura
 				dos.writeInt(eta[i]);
-			}// fine for
-			
+			} // fine for
+
 			System.out.println("Terminato scrittura file binario");
-			
+
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("File non trovato");
 		} catch (IOException ioe) {
@@ -49,8 +49,8 @@ public class DataStream {
 				System.out.print(dis.readChar());
 				System.out.print(dis.readInt() + "\n");
 			}
-			
-		} catch (EOFException ioe) { 
+
+		} catch (EOFException ioe) {
 			// End of file exception: terminato il file
 			System.out.println("Terminato lettura file binario");
 		} catch (FileNotFoundException fnfe) {
