@@ -86,7 +86,7 @@ public class Demo7 {
 		listaLibriComp.add(new LibroComparable("Harry Potter e la Pietra Filosofale", "J. K. Rowling", 1402, 8.50));
 
 		// map		
-		// prende una function che prende un libro e restituisce una stringa
+		// una function che prende un libro e restituisce una stringa
 		List<String> listAutori = listaLibriComp
 			.stream()
 			.map(libro -> libro.getAutore())
