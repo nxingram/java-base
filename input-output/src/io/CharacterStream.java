@@ -10,6 +10,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.stream.Stream;
 
 public class CharacterStream {
 
@@ -17,7 +20,16 @@ public class CharacterStream {
 		// "Reader-Writer": consigliato per la lettura di stream di caratteri
 		fileReader();
 		inputStreamReader(); // stessa cosa
+		stream();
+	}
 
+	private static void stream() {
+		try(Stream<String> canzoni = Files.lines(Path.of("folder/Dati-in.txt"))){
+			canzoni.forEach(System.out::println);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	private static void fileReader() {

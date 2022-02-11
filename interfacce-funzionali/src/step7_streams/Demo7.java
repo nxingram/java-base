@@ -1,5 +1,8 @@
 package step7_streams;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
@@ -10,6 +13,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import step1_comparable.LibroComparable;
 
@@ -49,6 +53,9 @@ public class Demo7 {
 			.filter(n -> n%3==0)
 			.sum();
 		System.out.println("somma: " + somma);
+		
+		// stream
+		Stream.of(3,5,6,8,11).filter(n -> n%2==0).forEach(System.out::println);
 		
 		
 		// collect
@@ -95,6 +102,14 @@ public class Demo7 {
 			.collect(Collectors.toList());
 		
 		listAutori.forEach(System.out::println);
+		
+		
+		// Stream
+		try(Stream<String> canzoni = Files.lines(Path.of("files/canzoni.txt"))){
+			canzoni.forEach(System.out::println);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 
