@@ -4,15 +4,20 @@ public class Demo {
 
 	public static void main(String[] args) {
 
-		ConnessioneSingleton conn = ConnessioneSingleton.getConn();
+		SingletonConnessione conn = SingletonConnessione.getConn();
 		
 		System.out.println(conn.getStato());
 		
 		// stessa connessione, stessa istanza
 		// stesso riferimento all'oggetto
-		ConnessioneSingleton conn2 = ConnessioneSingleton.getConn();
+		SingletonConnessione conn2 = SingletonConnessione.getConn();
 		
 		System.out.println("Stessa istanza: " + conn.equals(conn2));
+		
+		
+		
+		// thread safe		
+		SingletonThreadSafe instance = SingletonThreadSafe.getInstance();
 	}
 
 }

@@ -1,22 +1,25 @@
 package singleton;
 
-public class ConnessioneSingleton {
+/**
+ * DEPRECATO: non thread safe
+ */
+public class SingletonConnessione {
 
 	// singleton design pattern (Gang of Four)
 	
 	// proprietà e costruttore PRIVATE!!
-	private static ConnessioneSingleton conn;
+	private static SingletonConnessione conn;
 	
 	// proprietà da inizializzare nel costruttore
 	private String stato;
 	
-	private ConnessioneSingleton() {
+	private SingletonConnessione() {
 		stato = "connessa";
 	}
 	
-	public static ConnessioneSingleton getConn() {
+	public static SingletonConnessione getConn() {
 		if(conn == null) // se non inizializzata, la inizializzo
-			conn = new ConnessioneSingleton();
+			conn = new SingletonConnessione();
 		
 		return conn;
 	}
