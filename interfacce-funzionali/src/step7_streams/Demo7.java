@@ -55,6 +55,7 @@ public class Demo7 {
 		System.out.println("somma: " + somma);
 		
 		// stream
+		// method reference (vedi sotto) 
 		Stream.of(3,5,6,8,11).filter(n -> n%2==0).forEach(System.out::println);
 		
 		
@@ -105,6 +106,7 @@ public class Demo7 {
 		
 		
 		// Stream
+		// with resources: altri esempi https://www.baeldung.com/java-try-with-resources
 		try(Stream<String> canzoni = Files.lines(Path.of("files/canzoni.txt"))){
 			canzoni.forEach(System.out::println);
 		} catch (IOException e) {
